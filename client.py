@@ -11,8 +11,10 @@ client_socket.connect((os.environ['PICAMERA_SERVER'], 3141))
 connection = client_socket.makefile('wb')
 try:
     with picamera.PiCamera() as camera:
-        camera.resolution = (640, 480)
-        camera.framerate = 24
+        camera.resolution = (320, 240)
+        camera.hflip = True
+        camera.vflip = True
+        camera.framerate = 10
         camera.start_preview()
         time.sleep(2)
         camera.annotate_background = picamera.Color('black')
