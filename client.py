@@ -14,7 +14,7 @@ try:
         camera.resolution = (320, 240)
         camera.hflip = True
         camera.vflip = True
-        camera.framerate = 24
+        camera.framerate = 10
         camera.annotate_text_size = 16
         camera.start_preview()
         time.sleep(2)

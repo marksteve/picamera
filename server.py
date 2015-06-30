@@ -9,7 +9,7 @@ connection = server_socket.accept()[0].makefile('rb')
 try:
     cmdline = [
         'cvlc',
-        '--sout', 'http/ts://0.0.0.0:31415',
+        '--sout', '"#standard{access=http,mux=ogg,url=0.0.0.0:31415,fps=10}"',
         '--demux', 'h264',
         '-',
     ]
