@@ -1,4 +1,3 @@
-import os
 import socket
 import subprocess
 
@@ -9,11 +8,7 @@ server_socket.listen(0)
 connection = server_socket.accept()[0].makefile('rb')
 try:
     cmdline = [
-        'vlc',
-        '-I', 'http',
-        '--http-host', '0.0.0.0',
-        '--http-port', '8888',
-        '--http-password', os.environ['VLC_HTTP_PASSWORD'],
+        'cvlc',
         '--sout', 'http/ts://0.0.0.0:31415',
         '--demux', 'h264',
         '-',
